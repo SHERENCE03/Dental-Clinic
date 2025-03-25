@@ -1,0 +1,12 @@
+Array
+(
+    [fname] => Anino
+    [lname] => Lumitaw
+    [birthday] => 06/03/1909
+    [gender] => Female
+    [address] => CABANATUAN CITY NUEVA ECIJA
+    [phone] => +639557786263
+    [email] => shbo.carlos.au@phinmaed.com
+    [password] => Kahitano_123
+    [confirmPassword] => Kahitano_123
+)

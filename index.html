@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* From Uiverse.io by Li-Deheng */
+      .loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        --color: hsl(0, 1%, 29%);
+        --animation: 2s ease-in-out infinite;
+      }
+
+      .loader .circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: solid 2px var(--color);
+        border-radius: 50%;
+        margin: 0 10px;
+        background: url('your-image-path.jpg') no-repeat center center;
+        background-color: transparent;
+        animation: circle-keys var(--animation);
+      }
+
+      .loader .circle .dot {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: var(--color);
+        animation: dot-keys var(--animation);
+      }
+
+      .loader .circle .outline {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        animation: outline-keys var(--animation);
+      }
+
+      .circle:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      .circle:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      .circle:nth-child(4) {
+        animation-delay: 0.9s;
+      }
+
+      .circle:nth-child(5) {
+        animation-delay: 1.2s;
+      }
+
+      .circle:nth-child(2) .dot {
+        animation-delay: 0.3s;
+      }
+
+      .circle:nth-child(3) .dot {
+        animation-delay: 0.6s;
+      }
+
+      .circle:nth-child(4) .dot {
+        animation-delay: 0.9s;
+      }
+
+      .circle:nth-child(5) .dot {
+        animation-delay: 1.2s;
+      }
+
+      .circle:nth-child(1) .outline {
+        animation-delay: 0.9s;
+      }
+
+      .circle:nth-child(2) .outline {
+        animation-delay: 1.2s;
+      }
+
+      .circle:nth-child(3) .outline {
+        animation-delay: 1.5s;
+      }
+
+      .circle:nth-child(4) .outline {
+        animation-delay: 1.8s;
+      }
+
+      .circle:nth-child(5) .outline {
+        animation-delay: 2.1s;
+      }
+
+      @keyframes circle-keys {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+
+        50% {
+          transform: scale(1.5);
+          opacity: 0.5;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes dot-keys {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(0);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes outline-keys {
+        0% {
+          transform: scale(0);
+          outline: solid 20px var(--color);
+          outline-offset: 0;
+          opacity: 1;
+        }
+
+        100% {
+          transform: scale(1);
+          outline: solid 0 transparent;
+          outline-offset: 20px;
+          opacity: 0;
+        }
+        button {
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader">
+        <div class="circle">
+          <div class="dot"></div>
+          <div class="outline"></div>
+        </div>
+        <div class="circle">
+          <div class="dot"></div>
+          <div class="outline"></div>
+        </div>
+        <div class="circle">
+          <div class="dot"></div>
+          <div class="outline"></div>
+        </div>
+        <div class="circle">
+          <div class="dot"></div>
+          <div class="outline"></div>
+        </div>
+      </div>
+      
+      <!-- JavaScript for redirection -->
+      <script>
+        // Set the delay time (in milliseconds) for the loader animation
+        setTimeout(function() {
+          // Redirect to index.php after the delay
+          window.location.href = "index.php";
+        }, 3000); // 3000ms = 3 seconds
+      </script>
+      
+      <style>
+        /* Set the background image and loader styling */
+        .loader {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: url('your-image-path.jpg') no-repeat center center;
+          background-size: cover;
+          z-index: 9999;
+        }
+      
+        .circle {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          margin: 0 10px;
+          animation: rotate 1.5s linear infinite;
+        }
+      
+        .dot {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 10px;
+          height: 10px;
+          background-color: #fff;
+          border-radius: 50%;
+          animation: dot 1.5s ease-in-out infinite;
+        }
+      
+        .outline {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 2px solid #fff;
+          border-radius: 50%;
+          animation: outline 1.5s linear infinite;
+        }
+      
+        @keyframes rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      
+        @keyframes dot {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(0);
+            opacity: 0;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      
+        @keyframes outline {
+          0% {
+            transform: scale(0);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      </style>
+      
+      
+</html>
